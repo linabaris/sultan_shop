@@ -2,3 +2,15 @@
 @import './base/normilize';
 @import './base/var';
 
+@import './components//header';
+
+@import './components/btn-primary';
+@import './components/input';
+
+@import './components/footer';
+
+
+.wrapper {
+    max-width: $wrapper-width;
+    margin: 0 auto;
+}

@@ -1,0 +1,87 @@
+nav {
+    border-top: 1px solid rgba(63, 78, 101, 0.2);
+    border-bottom: 1px solid rgba(63, 78, 101, 0.2);
+}
+.header {
+    width: 100%;
+    &__info {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        padding: 14px 0;
+    }
+    &__address, &__mail {
+        display: flex;
+        width: 25%;
+        gap: 3%;
+        align-items: center;
+    }
+    &__actions {
+        display: flex;
+        width: 45%;
+        justify-content: space-between;
+        @include font(14px, 150%, 400);
+        color: $main-text;
+        align-items: center;
+        li {
+            cursor: pointer;
+            text-align: center;
+        }
+    }
+    &__text {
+        &_bold {
+            @include font(14px, 18px, 600);
+            color: $bold-text;
+        }
+        &_thin {
+            @include font(12px, 16px, 300);
+            color: $main-text;
+        }
+    }
+    
+    //style input form, may remove from header into component
+    &-search__form {
+        height: 58px;
+        width: 263px;
+        background-color: $bg-form;
+        border-radius: 36px;
+        border: none;padding: 20px;
+        color: #5C6370;
+        @include font(12px, 18p, 400);
+        opacity: 0.6;
+    }
+
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 24px 0;
+        align-items: center;
+    }
+    &__contacts {
+        display: flex;
+        align-items: center;
+    }
+    &__cart {
+        width: 6%;
+        border-left: 1px dashed rgba(63, 78, 101, 0.1);
+    }
+}
+
+.contacts {
+    &-info {
+        &__phone {
+           @include font(1.4rem, 2.1rem, 600);
+           color: $bold-text; 
+        }
+        &__mode {
+            @include font(1.2rem, 1.8rem, 300);
+            color: $main-text;
+        }
+        &__call {
+            @include font(1rem, 1.5rem, 400);
+            color: $main-text;
+            text-decoration: underline;
+            text-decoration-color:  rgba(63, 78, 101, 0.4);
+        }
+    }
+}

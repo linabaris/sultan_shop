@@ -2,3 +2,19 @@ $main-text: #3F4E65;
 $btn-bg: #FFC85E;
 $bold-text: #111111;
 $note-text: #1FD85D;
+$bg-form: #EDEDED;
+
+$wrapper-width:1370px;
+
+@mixin font($size, $height, $wieght) {
+    font-size: $size;
+    line-height: $height;
+    font-weight: $wieght;
+}
+
+@mixin flex($justify, $align, $direction: row) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}

@@ -1,0 +1,16 @@
+.btn-primary {
+    height: 63px;
+    width: 192px;
+    background-color: $btn-bg;
+    color: #FFF;
+    @include font(14px, 17px, 700);
+    border-radius: 79px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    &__content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 7px;
+    }
+}
