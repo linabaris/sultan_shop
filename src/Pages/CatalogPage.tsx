@@ -1,8 +1,15 @@
-import React from 'react'
+import Footer from 'components/Footer';
+import Header from 'components/Header';
+import ProductList from 'components/ProductList';
 
 function CatalogPage() {
   return (
-    <div>CatalogPage</div>
+    
+    <>
+      <Header/>
+      <ProductList/>
+      <Footer/>
+    </>
   )
 }
 

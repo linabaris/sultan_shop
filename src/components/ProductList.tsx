@@ -1,8 +1,14 @@
-import React from 'react'
+import ProductTile from './ProductTile';
+import { TProduct } from 'types';
+import data from '../products.json';
 
 function ProductList() {
   return (
-    <div>ProductList</div>
+    <section className='list list__wrapper' >
+      {data.map((item: TProduct) => {
+        return <ProductTile key={item.name} product={item}/>;
+      })}
+    </section>
   )
 }
 

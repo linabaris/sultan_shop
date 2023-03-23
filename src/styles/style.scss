@@ -9,6 +9,11 @@
 
 @import './components/footer';
 
+@import './components/card';
+
+@import './components/productTile';
+
+@import './components/productList';
 
 .wrapper {
     max-width: $wrapper-width;

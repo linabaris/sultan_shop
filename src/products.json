@@ -1,0 +1,80 @@
+[
+    {
+        "name": "Биолан для мытья посуды Лаванда и витамин Е 900мл",
+        "image_url": "http:\/\/www.nefco.ru\/wp-content\/uploads\/2019\/02\/БАЛЬЗАМ-ЛАВАНДА-И-ВИТАМИН-Е-900.jpg",
+        "logo_url": "http:\/\/i.beri-stroy.ru\/u\/3a\/5883b47de911ea8d89d2ec3061d85e\/-\/%D0%9D%D1%8D%D1%84%D0%B8%D1%81%20%D0%9A%D0%BE%D1%81%D0%BC%D0%B5%D1%82%D0%B8%D0%BA%D1%81.png",
+        "category": "Бытовая химия",
+        "price": 338,
+        "disclaimer": "Без ГМО и глютена",
+        "brand_name": "Biolan",
+        "country": "Finland",
+        "measure":"мл",
+        "size": "900"        
+    },
+    {
+        "name": "ШАМПУНЬ ДЛЯ ВОЛОС DELICARE MILK & SILK УВЛАЖНЕНИЕ 250МЛ",
+        "image_url": "https:\/\/www.r-ulybka.ru\/upload\/iblock\/b45\/b4501caa64c460adad9207fe3d3f0db8.jpg",
+        "category": "Волосы",
+        "price": 141,
+        "disclaimer": "Шампунь для волос Delicare Milk&Silk «Увлажнение и блеск» идеально подходит для сухих и тусклых волос. Увлажняющий шампунь с помощью свойств молочных протеинов, пептидов шелка, молочка хлопка и бамбукового экстракта способствует восполнению недостатка белков, делая волосы эластичными и упругими по всей длине.",
+        "brand_name": "Delicare",
+        "country": "Россия",
+        "measure":"мл",
+        "size": "250"
+    },
+    {
+        "name": "ШАМПУНЬ VALORI REPAIR THERAPY ВОССТАНОВЛЕНИЕ И УХОД ДЛЯ ПОВРЕЖДЕННЫХ ВОЛОС 250МЛ",
+        "image_url": "https:\/\/www.r-ulybka.ru\/upload\/iblock\/324\/324f03346bec2b3e6c72b800ea961cb6.jpg",
+        "category": "Волосы",
+        "price": 300,
+        "disclaimer": "Шампунь Valori Professional Repair Therapy возвращает поврежденным волосам здоровый вид, красоту и жизненную силу. Подходит для пересушенных и секущихся волос. Благодаря активным компонентам, входящим в состав шампуня, поврежденные волосы получают полный комплекс веществ, необходимых для ухода и восстановления. Масло облепихи и пантенол увлажняют и питают поврежденные волосы.",
+        "brand_name": "Valori",
+        "country": "Россия",
+        "measure":"мл",
+        "size": "250"
+    },
+    {
+        "name": "СЫВОРОТКА ДЛЯ ВОЛОС CP-1 PREMIUM SILK AMPOULE С ПРОТЕИНАМИ ШЕЛКА 150МЛ",
+        "image_url": "https:\/\/www.r-ulybka.ru\/upload\/iblock\/c3d\/c3dd8d7c61e3c6589af2725c3e2fc57f.jpg",
+        "category": "Волосы",
+        "price": 1024,
+        "disclaimer": "СЫВОРОТКА ДЛЯ ВОЛОС CP-1 PREMIUM SILK AMPOULE С ПРОТЕИНАМИ ШЕЛКА 150МЛ",
+        "brand_name": "CP-1",
+        "country": "Южная Корея",
+        "measure":"мл",
+        "size": "150"
+    }, 
+    {
+        "name": "ПАТЧИ ДЛЯ ВЕК BENABI С ЗОЛОТОМ , ГИАЛУРОНОВОЙ КИСЛОТОЙ И ГНЕЗДОМ ЛАСТОЧКИ 60ШТ",
+        "image_url": "https:\/\/www.r-ulybka.ru\/upload\/iblock\/900\/90011fc4c972f354e4be463662fc5147.jpg",
+        "category": "Лицо",
+        "price": 1405,
+        "disclaimer": "Омолаживающие гидрогелевые патчи Benabi оказывают антивозрастное действие, снимают отеки и осветляют темные круги под глазами. Гиалуроновая кислота интенсивно увлажняет.",
+        "brand_name": "Benabi",
+        "country": "Южная Корея",
+        "measure":"г",
+        "size": "183"
+    },
+    {
+        "name": "СОЛНЦЕЗАЩИТНОЕ МОЛОЧКО WEIS ДЛЯ ТЕЛА 140МЛ",
+        "image_url": "https:\/\/www.r-ulybka.ru\/upload\/iblock\/e52\/e520f3241c153427704a1b697077d3af.jpg",
+        "category": "Тело",
+        "price": 399,
+        "disclaimer": "Равномерно нанести молочко до полного впитывания за 30 минут до выхода на солнце. Рекомендуется повторять каждые 2 часа и/или после купания.",
+        "brand_name": "WEIS",
+        "country": "Россия",
+        "measure":"мл",
+        "size": "140"
+    },
+    {
+        "name": "КОСМЕТИЧЕСКИЕ БУМАЖНЫЕ САЛФЕТКИ FLOOM CLASSIC 2Х-СЛОЙНЫЕ В КУБЕ МРАМОР 50ШТ",
+        "image_url": "https:\/\/www.r-ulybka.ru\/upload\/iblock\/a3d\/a3d61441d8e14c7e73f8bda8b737c0be.jpg",
+        "category": "Бамажная продукция",
+        "price": 67,
+        "disclaimer": "КОСМЕТИЧЕСКИЕ БУМАЖНЫЕ САЛФЕТКИ FLOOM CLASSIC 2Х-СЛОЙНЫЕ В КУБЕ МРАМОР 50ШТ",
+        "brand_name": "Floom",
+        "country": "Россия",
+        "measure":"г",
+        "size": "100"
+    }
+]

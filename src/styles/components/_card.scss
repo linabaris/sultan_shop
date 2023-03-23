@@ -1,0 +1,54 @@
+.card {
+    @include flex(space-between, center);
+    max-height: 933px;
+    gap: 3%;
+    padding: 10px 5px;
+
+    &__header {
+        padding-bottom: 2%;
+    }
+    &__name {
+        @include font(3rem, 4.5rem, 600);
+    }
+    &__weight {
+        @include font(1.2rem, 1.6rem, 400);
+        color: $main-text;
+    }
+    &__price {
+        @include font(3rem, 3.9rem, 800);
+    }
+    &__body {
+        @include flex(space-between, start, column);
+        gap: 2rem;
+    }
+    &__country,  &__brand {
+        @include font(1.4rem, 2rem, 300);
+        color: $main-text;
+        :last-child {
+            @include font(1.4rem, 2rem, 500);
+        }
+    }
+
+    &-disclaim {
+        &__title {
+            @include font(1.6rem, 2.4rem, 500);
+        }
+        &__text {
+            @include font(1.2rem, 1.8rem, 300);
+            color: $main-text;
+        }
+    }
+    &-charact {
+        &__title {
+            @include font(1.6rem, 2.4rem, 500); 
+        }
+        &__item {
+            @include font(1.4rem, 2.1rem, 300);
+            color: $main-text;
+
+            span {
+                @include font(1.4rem, 2.1rem, 500);
+            }
+        }
+    }
+}

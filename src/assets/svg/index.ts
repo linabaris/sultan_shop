@@ -9,5 +9,7 @@ import { ReactComponent as Telegram } from './telegram.svg';
 import { ReactComponent as WhatsApp } from './whatsapp.svg';
 import { ReactComponent as Mastercard } from './mastercard.svg';
 import { ReactComponent as Visa } from './visa.svg';
+import { ReactComponent as Box } from './box.svg';
+import { ReactComponent as CartWhite } from './basket-white.svg';
 
-export {Map, Mail, Logo, LogoWhite, Tile, Download, Cart, Telegram, WhatsApp, Mastercard, Visa};
+export {Box, Map, Mail, Logo, LogoWhite, Tile, Download, Cart, Telegram, WhatsApp, Mastercard, Visa, CartWhite};
