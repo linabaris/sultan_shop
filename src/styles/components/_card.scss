@@ -2,8 +2,17 @@
     @include flex(space-between, center);
     max-height: 933px;
     gap: 3%;
-    padding: 10px 5px;
+    padding: 20px 5px;
 
+    &__pic {
+        max-width: 66rem;
+        max-height: 47rem;
+        img {
+            object-fit: contain;
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
     &__header {
         padding-bottom: 2%;
     }
@@ -12,6 +21,9 @@
     }
     &__weight {
         @include font(1.2rem, 1.6rem, 400);
+        display: flex;
+        text-align: center;
+        gap: 1rem;
         color: $main-text;
     }
     &__price {

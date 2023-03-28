@@ -15,6 +15,16 @@
 
 @import './components/productList';
 
+@import './components/catalogPage';
+
+@import './components/sort';
+
+@import './components/filterTile';
+
+@import './components/filterByCat';
+
+@import './components/filterByParam';
+
 .wrapper {
     max-width: $wrapper-width;
     margin: 0 auto;

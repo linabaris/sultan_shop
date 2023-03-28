@@ -1,5 +1,6 @@
 [
     {
+        "id":"0",
         "name": "Биолан для мытья посуды Лаванда и витамин Е 900мл",
         "image_url": "http:\/\/www.nefco.ru\/wp-content\/uploads\/2019\/02\/БАЛЬЗАМ-ЛАВАНДА-И-ВИТАМИН-Е-900.jpg",
         "logo_url": "http:\/\/i.beri-stroy.ru\/u\/3a\/5883b47de911ea8d89d2ec3061d85e\/-\/%D0%9D%D1%8D%D1%84%D0%B8%D1%81%20%D0%9A%D0%BE%D1%81%D0%BC%D0%B5%D1%82%D0%B8%D0%BA%D1%81.png",
@@ -12,6 +13,7 @@
         "size": "900"        
     },
     {
+        "id":"1",
         "name": "ШАМПУНЬ ДЛЯ ВОЛОС DELICARE MILK & SILK УВЛАЖНЕНИЕ 250МЛ",
         "image_url": "https:\/\/www.r-ulybka.ru\/upload\/iblock\/b45\/b4501caa64c460adad9207fe3d3f0db8.jpg",
         "category": "Волосы",
@@ -23,6 +25,7 @@
         "size": "250"
     },
     {
+        "id":"2",
         "name": "ШАМПУНЬ VALORI REPAIR THERAPY ВОССТАНОВЛЕНИЕ И УХОД ДЛЯ ПОВРЕЖДЕННЫХ ВОЛОС 250МЛ",
         "image_url": "https:\/\/www.r-ulybka.ru\/upload\/iblock\/324\/324f03346bec2b3e6c72b800ea961cb6.jpg",
         "category": "Волосы",
@@ -34,6 +37,7 @@
         "size": "250"
     },
     {
+        "id":"3",
         "name": "СЫВОРОТКА ДЛЯ ВОЛОС CP-1 PREMIUM SILK AMPOULE С ПРОТЕИНАМИ ШЕЛКА 150МЛ",
         "image_url": "https:\/\/www.r-ulybka.ru\/upload\/iblock\/c3d\/c3dd8d7c61e3c6589af2725c3e2fc57f.jpg",
         "category": "Волосы",
@@ -45,6 +49,7 @@
         "size": "150"
     }, 
     {
+        "id":"4",
         "name": "ПАТЧИ ДЛЯ ВЕК BENABI С ЗОЛОТОМ , ГИАЛУРОНОВОЙ КИСЛОТОЙ И ГНЕЗДОМ ЛАСТОЧКИ 60ШТ",
         "image_url": "https:\/\/www.r-ulybka.ru\/upload\/iblock\/900\/90011fc4c972f354e4be463662fc5147.jpg",
         "category": "Лицо",
@@ -56,6 +61,7 @@
         "size": "183"
     },
     {
+        "id":"5",
         "name": "СОЛНЦЕЗАЩИТНОЕ МОЛОЧКО WEIS ДЛЯ ТЕЛА 140МЛ",
         "image_url": "https:\/\/www.r-ulybka.ru\/upload\/iblock\/e52\/e520f3241c153427704a1b697077d3af.jpg",
         "category": "Тело",
@@ -67,6 +73,7 @@
         "size": "140"
     },
     {
+        "id":"6",
         "name": "КОСМЕТИЧЕСКИЕ БУМАЖНЫЕ САЛФЕТКИ FLOOM CLASSIC 2Х-СЛОЙНЫЕ В КУБЕ МРАМОР 50ШТ",
         "image_url": "https:\/\/www.r-ulybka.ru\/upload\/iblock\/a3d\/a3d61441d8e14c7e73f8bda8b737c0be.jpg",
         "category": "Бамажная продукция",

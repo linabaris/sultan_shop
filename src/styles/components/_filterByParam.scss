@@ -1,0 +1,45 @@
+.param {
+    @include flex(start, start, column);
+    gap: 2rem;
+    padding: 0 2rem;
+    &__title {
+        @include font(1.6rem, 2.4rem, 500);
+    }
+    &-price {
+        &__range {
+            input {
+                max-width: 10rem;
+                height: 2.3rem;
+                border-radius: 100rem;
+                background: linear-gradient(90deg, rgba(255, 198, 80, 0.3) 0%, rgba(254, 202, 110, 0.3) 97.25%);
+                border: none;
+                text-align: center;
+                @include font(1.2rem, 1.5rem, 300);
+                color: $main-text;
+                font-family: inherit;
+            }
+            input::placeholder {
+                text-align: center;
+                @include font(1.2rem, 1.5rem, 300);
+                color: $main-text;
+                font-family: inherit;
+            }
+        }
+        &__title {
+            @include font(1.4rem, 2.1rem, 400);
+            color: $main-text;
+        }
+    }
+    &-company, &-brand {
+        &__title {
+            @include font(1.6rem, 2.4rem, 500);
+        }
+        input {
+            background-color: #EDEDED;
+        }
+        &__item {
+            @include font(1.4rem, 2.1rem, 400);
+            color: $main-text;
+        }
+    }
+}

@@ -1,0 +1,28 @@
+.sort {
+    span {
+        @include font(1.6rem, 2.4rem, 500);
+    }
+
+    &__param {
+        @include font( 1.6rem, 2.4rem, 400);
+        color: #FFC85E;
+        padding-left: .5rem;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    &__list {
+        width: 10rem;
+        height: 10rem;
+        box-shadow: 0px 14px 39px -11px rgba(0, 0, 0, 0.06);
+        border-radius: 1rem;
+        @include flex(space-around, center, column);
+    }
+    &__item {
+        @include font( 1.6rem, 2.4rem, 400);
+        color: $main-text;
+        cursor: pointer;
+    }
+    &__item:hover {
+        color: #FFC85E;
+    }
+}

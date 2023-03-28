@@ -1,0 +1,14 @@
+.catalog {
+    &__title {
+        @include font(4rem, 4.8rem, 500);
+        color: #111;
+    }
+    &__up-line {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 2rem;
+    }
+    &__main {
+        display: flex;
+    }
+}
