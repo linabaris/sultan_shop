@@ -1,24 +1,48 @@
-import FilterTile from "./FilterTile"
+import FilterTile from "./FilterTile";
 
 function FilterByCat() {
-    const filterObj = {
-        body: "Уход за телом", 
-        face: "Уход за лицом", 
-        feet: "Уход за ногами",
-        hand: "Уход за руками",
-        hair: "Уход за волосами",
-        tan: "Средства для загара",
-        shave: "Средства для бртиья",
-        paper: "Бумажная продукция",
-        hygiene: "Гигиеническая продукция"
-    }
 
+    const filterObj = [
+        {
+            name: 'Показать всё',
+            filterProp: ''
+        },
+        {
+            name: "Уход за телом",
+            filterProp: 'body', 
+        }, {
+            name: "Уход за лицом",
+            filterProp: 'face'
+        }, {
+            name: "Уход за ногами", 
+            filterProp: 'feet',
+        }, {
+            name: "Уход за руками",
+            filterProp: 'hand',
+        }, {
+            name:"Уход за волосами",
+            filterProp: 'hair'
+        } , {
+            name: "Средства для загара",
+            filterProp: 'tan'
+        } , {
+            name: "Средства для бртиья", 
+            filterProp: 'shave'
+        }, {
+            name: "Бумажная продукция",
+            filterProp: 'paper'
+        } , {
+            name: "Гигиеническая продукция",
+            filterProp: 'hygiene'
+        }
+    ]
+      
   return (
     <div className="filter-line wrapper">
         {
-            Object.values(filterObj).map((item, index) => {
+            filterObj.map((item, index) => {
                 return (
-                    <FilterTile text={item} key={index}/>
+                    <FilterTile text={item.name} key={index} param={item.filterProp}/>
                 )
             })
         }

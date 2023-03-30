@@ -14,7 +14,7 @@ export default function Product({product}:TProductProps) {
           <span className='product__size'>{`${product.size} ${product.measure}`}</span>
         </div>
         <div className="product__info">
-          <Link to={`/card/${product.name}`}>
+          <Link to={`/card/${product.code}`}>
             <div className="product__name">{product.name}</div>
           </Link>
           <ul className="product__prop">

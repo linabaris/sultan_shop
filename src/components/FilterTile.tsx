@@ -1,10 +1,20 @@
+import { useDispatch } from "react-redux";
+import { setFilterParam } from "redux/slices/filterSlice";
 
-function FilterTile(props : {text : string} ) {
-  const clickHandler = () => {
-    console.log('click')
+interface FilterProp {
+    text: string;
+    param: string;
 }
+
+function FilterTile(props: FilterProp) {
+
+  const dispatch = useDispatch();
+  const clickHandler = (param : string) => {
+    dispatch(setFilterParam(param));
+}
+
   return (
-    <div className="filter-tile" onClick={() => clickHandler()}>
+    <div className="filter-tile" onClick={() => clickHandler(props.param)}>
         <div className="filter-tile__name">
             {props.text}
         </div>

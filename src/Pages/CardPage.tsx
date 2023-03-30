@@ -7,7 +7,7 @@ import data from 'products.json';
 function CardPage() {
   //get id(name) product
   const location = decodeURI(useLocation().pathname.slice(6));
-  const currentIndex = data.findIndex(product => product.name === location);
+  const currentIndex = data.findIndex(product => String(product.code) === location);
 
   return (
     <>

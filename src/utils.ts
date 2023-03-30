@@ -1,6 +1,6 @@
 import { TProduct } from './types/TProduct';
 
-const compareFn = (a:TProduct, b:TProduct):number => {
+const compareNames = (a:TProduct, b:TProduct):number => {
     const nameA = a.name.toLowerCase();
     const nameB = b.name.toLowerCase();
 
@@ -8,20 +8,37 @@ const compareFn = (a:TProduct, b:TProduct):number => {
     if(nameA > nameB) return 1;
     return 0;
 }
+
+const comparePrices = (a:TProduct, b:TProduct):number => {
+    return a.price-b.price;
+}
+
 const getSortedProduct = (products:TProduct[], sortParam:string, isAsc:boolean) => {
-    const sortedProducts :TProduct[]= [...products];
+    const sortedProducts: TProduct[] = [...products];
     if(sortParam === 'name') {
         sortedProducts.sort((a:TProduct,b:TProduct) => {
-            return compareFn(a,b)
+            return compareNames(a,b)
         })
     } 
 
     if( sortParam === 'price') {
         sortedProducts.sort((a:TProduct, b:TProduct) => {
-            return compareFn(a,b);
+            return comparePrices(a,b);
         })
     } 
         
     return isAsc ? sortedProducts : sortedProducts.reverse();
 }
-export default getSortedProduct;
+
+const getFilteredProduct = (products:TProduct[],filterParam:string ) => {
+    const filteredProducts: TProduct[] = [...products];
+    if(filterParam.length === 0) return filteredProducts;
+    return filteredProducts.filter(product => product.type === filterParam)
+}
+
+const getFilteredProdByPrice = (products:TProduct[], priceMin:number, priceMax:number) => {
+    const filteredProducts: TProduct[] = [...products];
+    return filteredProducts.filter(product => product.price >= priceMin && product.price<=priceMax)
+}
+
+export {getSortedProduct, getFilteredProduct, getFilteredProdByPrice};
