@@ -1,8 +1,11 @@
-import React from 'react';
+import { Link } from 'react-router-dom';
 import { Map, Mail, Logo, Tile, Download, Cart } from '../assets/svg';
+import { useSelector } from 'react-redux';
 import Button from './Button';
 
 function Header() {
+
+  const { goods } = useSelector((state:any) => state.cart); 
   return (
     <header className='header'>
       <div className="header__info wrapper">
@@ -48,7 +51,15 @@ function Header() {
               </div>
             </div>
             <Button text={'Прайс-лист'} icon={<Download/>}/>
-            <Cart className="header__cart"/>
+            <div className="header__cart">
+              <Link to={`/cart/`}>
+                <Cart className="header__cart-icon"/>
+                <div className="header__cart-count">
+                  <span>{goods.length}</span>
+                </div>
+              </Link>
+            </div>
+            
           </div>
         </div>
       </nav>

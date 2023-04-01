@@ -12,4 +12,5 @@ export type TProduct = {
     manufacture: string;
     measure:string;
     size: string;
+    count?:number;
 }

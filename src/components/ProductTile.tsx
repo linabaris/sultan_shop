@@ -3,9 +3,25 @@ import Button from './Button';
 import { TProductProps } from 'types';
 import { CartWhite } from 'assets/svg';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addGood } from 'redux/slices/cartSlice';
 
 
 export default function Product({product}:TProductProps) {
+
+  const dispatch = useDispatch();
+
+  const cartClickHandler = () => {
+    const item = {
+      id: product.id,
+      image_url: product.image_url,
+      name: product.name,
+      disclaimer: product.disclaimer,
+      price: product.price,
+     }
+     dispatch(addGood(item));
+  }
+
   return (
     <div className="product">
       <div className="product__container">
@@ -25,7 +41,7 @@ export default function Product({product}:TProductProps) {
             <div className="product__price">
               {`${product.price} ₽`} 
             </div>
-            <Button text={'В КОРЗИНУ'} icon={<CartWhite/>}/>
+            <Button text={'В КОРЗИНУ'} icon={<CartWhite/>} onClick={() => cartClickHandler()}/>
           </div>
         </div>
       </div>
