@@ -41,4 +41,12 @@ const getFilteredProdByPrice = (products:TProduct[], priceMin:number, priceMax:n
     return filteredProducts.filter(product => product.price >= priceMin && product.price<=priceMax)
 }
 
-export {getSortedProduct, getFilteredProduct, getFilteredProdByPrice};
+const getProductsPerPage = (products: TProduct[], productsPerPage:number) => {
+    const pages = [];
+    for(let i =0; i<products.length; i+=productsPerPage) {
+        pages.push(products.slice(i, i+productsPerPage));
+    };
+    return pages;
+}
+
+export {getSortedProduct, getFilteredProduct, getFilteredProdByPrice, getProductsPerPage};

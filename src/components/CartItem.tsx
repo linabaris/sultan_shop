@@ -1,7 +1,24 @@
 import {  TProductProps } from "types";
+import { Delete } from '../assets/svg';
+import { useDispatch } from "react-redux";
+import { addGood, removeGood, reduceGoods } from "redux/slices/cartSlice";
 
 function CartItem({product}:TProductProps) {
-
+    const dispatch = useDispatch();
+    const decClickHandler = () => {
+        if(product.count === 1) {
+            dispatch(removeGood(product.id))
+        } else {
+            dispatch(reduceGoods(product));
+        }
+        
+    }
+    const incClickHandler = () => {
+        dispatch(addGood(product));
+    }
+    const clickDeleteHandler = () => {
+        dispatch(removeGood(product.id))
+    }
   return (
     <div className="cart__item cart-item">
         <div className="cart-item__pic">
@@ -13,15 +30,15 @@ function CartItem({product}:TProductProps) {
             <div className="cart-item__disc">{product.disclaimer}</div>
         </div>
         <div className="cart-item__manage-btn manage-btn">
-            <button className="manage-btn__dec">-</button>
-            <span></span>
-            <button className="manage-btn__dec">+</button>
+            <button className="manage-btn__dec" onClick={() => decClickHandler()}>-</button>
+            <span>{product.count?product.count:1}</span>
+            <button className="manage-btn__inc" onClick={() => incClickHandler()}>+</button>
         </div>
         <div className="cart-item__total-price">
             {product.count?product.price*product.count:product.price} ₽
         </div>
         <div className="cart-item__delete-btn">
-            <button></button>
+            <button onClick={() => clickDeleteHandler()}><Delete/></button>
         </div>
     </div>
   )

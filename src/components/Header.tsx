@@ -5,7 +5,7 @@ import Button from './Button';
 
 function Header() {
 
-  const { goods } = useSelector((state:any) => state.cart); 
+  const { totalCount } = useSelector((state:any) => state.cart); 
   return (
     <header className='header'>
       <div className="header__info wrapper">
@@ -55,7 +55,7 @@ function Header() {
               <Link to={`/cart/`}>
                 <Cart className="header__cart-icon"/>
                 <div className="header__cart-count">
-                  <span>{goods.length}</span>
+                  <span>{totalCount}</span>
                 </div>
               </Link>
             </div>

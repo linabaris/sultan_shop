@@ -24,6 +24,15 @@
         &__total-price {
             @include font(3rem, 3.9rem, 700);
         }
+        &__delete-btn {
+            background: #FFC85E;
+            border-radius: 79px;
+            button {
+                align-items: center;
+                width: 6rem;
+                height: 6rem;
+            }
+        }
     }
 }
 .manage-btn {

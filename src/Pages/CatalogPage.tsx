@@ -2,6 +2,7 @@ import FilterByCat from 'components/FilterByCat';
 import { FilterByParam } from 'components/FilterByParam';
 import Footer from 'components/Footer';
 import Header from 'components/Header';
+import Pagination from 'components/Pagination';
 import ProductList from 'components/ProductList';
 import Sort from 'components/Sort';
 
@@ -18,6 +19,7 @@ function CatalogPage() {
         <FilterByParam/>
         <ProductList/>
       </div>
+      <Pagination/>
       <Footer/>
     </>
   )
