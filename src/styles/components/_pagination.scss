@@ -1,0 +1,24 @@
+.pagination {
+    padding: 5rem  0 5rem 32.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    &__item {
+        width: 3.5rem;
+        height: 3.5rem;
+        @include font(1.4rem, 1.8rem, 500);
+        color: $main-text;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &-arrow {
+            cursor: pointer;
+        }
+    }
+}
+.active {
+    border-radius: 1000px;
+    background: linear-gradient(90deg, rgba(255, 198, 80, 0.3) 0%, rgba(254, 202, 110, 0.3) 97.25%);
+}

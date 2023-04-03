@@ -20,6 +20,11 @@
                 color: $main-text;
                 font-family: inherit;
             }
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0; 
+            }
             input::placeholder {
                 text-align: center;
                 @include font(1.2rem, 1.5rem, 300);
@@ -34,21 +39,43 @@
         }
     }
     &-company, &-brand {
+        width: 100%;
         &__title {
             @include font(1.6rem, 2.4rem, 500);
             padding-bottom: 2rem;
         }
         input {
             background-color: #EDEDED;
-            margin-bottom: 1rem;
         }
         &__item {
             @include font(1.4rem, 2.1rem, 400);
             color: $main-text;
             padding-bottom: .5rem;
-            input {
-                margin-right: 1rem;
-            }
+        }
+        &__show-btn {
+            cursor: pointer;
+            @include font(1.2rem, 1.8rem, 500);
+            color: $main-text;
+        }
+    }
+    &__actions-btn {
+        @include flex(space-between, center);
+        width: 100%;
+    }
+    &__reset-btn {
+        width: 5.9rem;
+        height: 5.9rem;
+        background-color: $btn-bg;
+        border-radius: 7.9rem;
+    }
+    &__filter {
+        &-cat {
+            @include font(1.6rem, 2.4rem, 500);
+            font-family: inherit;
+        }
+        &-tile {
+            cursor: pointer;
+            margin-bottom: 1rem;
         }
     }
 }

@@ -1,4 +1,5 @@
 export type TProduct = {
+    [key:string]:any,
     id: string;
     code: number|string;
     name: string;

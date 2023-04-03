@@ -49,4 +49,18 @@ const getProductsPerPage = (products: TProduct[], productsPerPage:number) => {
     return pages;
 }
 
-export {getSortedProduct, getFilteredProduct, getFilteredProdByPrice, getProductsPerPage};
+const countParams = (produts: TProduct[], param:string) => {
+    let obj:Record<string, number> = {};
+    for(let i = 0; i<produts.length; i++) {
+        let item = produts[i];
+        let propName = item[param];
+        if(!obj[propName]) {
+            obj[propName] = 1;
+        } else {
+            obj[propName] +=1;
+        }
+    }
+    return Object.entries(obj);
+}
+
+export {getSortedProduct, getFilteredProduct, getFilteredProdByPrice, getProductsPerPage, countParams}

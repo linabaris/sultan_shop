@@ -1,9 +1,24 @@
 import { Box } from 'assets/svg';
 import Button from './Button';
 import { TProductProps } from 'types';
+import { addGood } from 'redux/slices/cartSlice';
+import { useDispatch } from 'react-redux';
 
 
 function Card({product} : TProductProps) {
+    const dispatch = useDispatch();
+
+    const clickAddHandler = () => {
+        const item = {
+            id: product.id,
+            image_url: product.image_url,
+            name: product.name,
+            disclaimer: product.disclaimer,
+            price: product.price,
+        }
+
+        dispatch(addGood(item));
+    }
 
   return (
     <div className="card wrapper">
@@ -23,7 +38,7 @@ function Card({product} : TProductProps) {
                     <div className="card__price">{product.price} Р</div>
                 </div>
                 <div className="card__actions">
-                    <Button text={'В корзину'}/>
+                    <Button text={'В корзину'} onClick={() => clickAddHandler( )}/>
                 </div>
             </div>
             <div className="card__body">

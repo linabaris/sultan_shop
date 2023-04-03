@@ -14,6 +14,24 @@ import { ReactComponent as CartWhite } from './basket-white.svg';
 import { ReactComponent as Delete } from './delete.svg';
 import { ReactComponent as ArrowNext } from './next-arrow.svg';
 import { ReactComponent as ArrowPrev } from './prev-arrow.svg';
+import { ReactComponent as Search } from './search.svg';
 
 
-export {Box, Map, Mail, Logo, LogoWhite, Tile, Download, Cart, Telegram, WhatsApp, Mastercard, Visa, CartWhite, Delete, ArrowNext, ArrowPrev};
+export {Box, 
+    Map, 
+    Mail, 
+    Logo, 
+    LogoWhite, 
+    Tile, 
+    Download, 
+    Cart, 
+    Telegram, 
+    WhatsApp, 
+    Mastercard, 
+    Visa, 
+    CartWhite, 
+    Delete, 
+    ArrowNext, 
+    ArrowPrev, 
+    Search
+};

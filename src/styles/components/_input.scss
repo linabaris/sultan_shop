@@ -1,10 +1,22 @@
 .input {
-    height: 5.9rem;
-    width: 28.2rem;
-    border-radius: 3.6rem;
-    @include font(1.2rem, 1.8rem, 400);
-    color: #5C6370;
-    border: none;
-    padding: 2rem;
-    font-family: inherit;
+    @include flex(space-between, center);
+    background-color: #EDEDED;
+    padding-right: 1rem;
+    border-radius: 36px;
+    &__area {
+        height: 5.9rem;
+        width: 18.9rem;
+        border-radius: 3.6rem;
+        @include font(1.2rem, 1.8rem, 400);
+        color: #5C6370;
+        border: none;
+        padding: 2rem;
+        font-family: inherit;
+    }
+    &__btn {
+        width: 3.9rem;
+        height: 3.9rem;
+        background-color: $btn-bg;
+        border-radius: 1000px;
+    }
 }

@@ -20,11 +20,11 @@ function Pagination() {
     }
     const pagesArr = [...new Array(amountPage)];
   return (
-    <div className="pagination">
+    <div className="pagination wrapper">
         <div 
-            className={`pagination__item_prev ${currentPage === 1 ? 'inactive' : ''}`}
+            className={`pagination__item pagination__item_prev ${currentPage === 1 ? 'inactive' : ''}`}
             onClick={prevPageHandler}>
-            <ArrowPrev/>
+            <ArrowPrev className='pagination__item-arrow'/>
         </div>
         {pagesArr.map((_,index) => {
             const i = index +1;
@@ -37,9 +37,9 @@ function Pagination() {
                 </div>
             )
         })}
-        <div className={`pagination__item_next ${currentPage === amountPage ? 'inactive' : ''}`}
+        <div className={`pagination__item pagination__item_next ${currentPage === amountPage ? 'inactive' : ''}`}
             onClick={nextPageHandler}>
-            <ArrowNext/>        
+            <ArrowNext className='pagination__item-arrow'/>        
         </div>
     </div>
   )

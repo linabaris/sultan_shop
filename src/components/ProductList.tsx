@@ -29,7 +29,7 @@ function ProductList() {
     }
     const paginatedArray = getProductsPerPage(filteredByPriceData, productPerPage)[currentPage-1]
     setVisibleProducts(paginatedArray);
-  },[data, sortParam, ascSort, filterParam, priceMin, priceMax, currentPage,productPerPage])
+  },[dispatch, data, sortParam, ascSort, filterParam, priceMin, priceMax, currentPage,productPerPage])
 
   return (
     <section className='list list__wrapper' >

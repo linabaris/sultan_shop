@@ -4,6 +4,7 @@ const initialState = {
     filterParam: '',
     priceMin: 0,
     priceMax: 10000,
+    searchParam:'',
 }
 
 const filterSlice = createSlice({
@@ -18,10 +19,13 @@ const filterSlice = createSlice({
         },
         setPriceMax(state, action) {
             state.priceMax = action.payload;
-        }
+        },
+        setSearchParam(state, action) {
+            state.searchParam = action.payload;
+        },
     }
 })
 
-export const { setFilterParam, setPriceMin, setPriceMax } = filterSlice.actions;
+export const { setFilterParam, setPriceMin, setPriceMax, setSearchParam } = filterSlice.actions;
 
 export default filterSlice.reducer;

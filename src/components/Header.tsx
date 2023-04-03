@@ -59,7 +59,11 @@ function Header() {
                 </div>
               </Link>
             </div>
-            
+            <div className="header__admin-act">
+              <Link to={`/admin/`}>
+                <button className='header-admin-act__btn'>Управление</button>
+              </Link>
+            </div>
           </div>
         </div>
       </nav>
