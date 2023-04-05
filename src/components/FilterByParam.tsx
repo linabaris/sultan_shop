@@ -3,29 +3,33 @@ import Input from "./Input";
 import { Search, Delete } from "assets/svg";
 import { filterObj } from "./FilterByCat";
 import { useSelector, useDispatch } from "react-redux";
-import { useState  } from "react";
-import { setFilterParam, setSearchParam, setPriceMin, setPriceMax } from "../redux/slices/filterSlice";
+import { useState, useEffect } from "react";
+import { setFilterParam,  setPriceMin, setPriceMax,setCheckedParams, removeCheckedParams, setSearchParam, resetFilter } from "../redux/slices/filterSlice";
 import { countParams } from "utils";
 
 export function FilterByParam() {
 
   const products = useSelector((state : any) => state.products.items);
-  const iterProducts = [...products];
+  const iterProd = [...products];
+  const countedManufact = countParams(iterProd, 'manufacture');
+  const countedBrands = countParams(iterProd, 'brand_name');
 
-  const countedManufact = countParams(iterProducts, 'manufacture');
-  const countedBrands = countParams(iterProducts, 'brand_name');
-
+  //initialState of input field in parametrs panel
   const [inputMinVal, setInputMinVal] = useState('');
   const [inputMaxVal, setInputMaxVal] = useState('');
   const [inputCompany, setInputCompany] = useState('');
-  const [inputBrand, setInputBrand] = useState(''); 
+  const [inputBrand, setInputBrand] = useState('');
 
-  //показывать скрывать весь список брендов, производителей
+  const [companyList, setCompanyList] = useState(countedManufact);
+  const [brandList, setBrandList] = useState(countedBrands);
+
+  //show or hide full lists of brand/manufacture(company)
   const [visibleManufact, setVisibleManufact] = useState(false);
   const [visibleBrands, setVisibleBrands ] = useState(false);
 
   const dispatch = useDispatch();
   
+  //filter by price
   const clickFilterHandle = () => {
     if(inputMinVal && inputMaxVal ) {
       if(+inputMaxVal>=+inputMinVal) {
@@ -48,9 +52,60 @@ export function FilterByParam() {
       return;
     }
   }
+  //filter by care category : body, hands, etc 
   const catFilterClickHandler = (param:string) => {
     dispatch(setFilterParam(param));
   }
+
+  const checkClickHandler = (e:React.ChangeEvent<HTMLInputElement>, item:string) => {
+    if(e.target.checked) {
+      dispatch(setCheckedParams(item))
+    } else {
+      dispatch(removeCheckedParams(item));
+    }
+  }
+
+
+  const searchClickHandler = () => {
+    if(inputCompany) {
+      dispatch(setSearchParam(inputCompany));
+    } else {
+      dispatch(setSearchParam(inputBrand));
+    }
+  }
+  const resetClickHandler = () => {
+    setInputMinVal('');
+    setInputMaxVal('');
+    setInputBrand('');
+    setInputCompany('');
+    dispatch(resetFilter());
+
+  }
+  useEffect(() => {
+    if(!inputCompany) {
+      setCompanyList(countedManufact);
+      dispatch(setSearchParam(''));
+    } else {
+      const arr = countedManufact.filter(item => {
+        return item[0].toLowerCase().includes(inputCompany.toLowerCase());
+      })
+      setCompanyList(arr);
+    }
+  
+  },[inputCompany])
+
+  useEffect(() => {
+    if(!inputBrand) {
+      setBrandList(countedBrands);
+      dispatch(setSearchParam(''));
+    } else {
+      const arr = countedBrands.filter(item => {
+        return item[0].toLowerCase().includes(inputBrand.toLowerCase());
+      })
+      setBrandList(arr);
+    }
+  
+  },[inputBrand])
 
 
   return (
@@ -67,14 +122,24 @@ export function FilterByParam() {
       <div className="param__company param-company">
         <div className="param-company__title">Производитель</div>
         <div className="param-company__search">
-          <Input text="Поиск..." icon={<Search/>} onChange={(e:React.ChangeEvent<HTMLInputElement>) => setInputCompany(e.target.value)}/>
+          <Input 
+            value={inputCompany}
+            text="Поиск..." 
+            icon={<Search/>} 
+            onChange={(e:React.ChangeEvent<HTMLInputElement>) => setInputCompany(e.target.value)}
+            onClick={() => searchClickHandler()}/>
         </div>
         {visibleManufact? (
           <ul className="param-company__list">
           {
-            countedManufact.map((item, index) => {
+            companyList.map((item, index) => {
               return (
-                <li key={index} className="param-company__item"><input type='checkbox' />{item[0]}({item[1]})</li>
+                <li key={index} className="param-company__item">
+                  <input 
+                  type='checkbox' 
+                  onChange={(e) => checkClickHandler(e,item[0])}/>
+                  {item[0]}({item[1]})
+                </li>
               )
             })
           }
@@ -84,9 +149,14 @@ export function FilterByParam() {
         ) : (
           <ul className="param-company__list">
           {
-            countedManufact.slice(0, 5).map((item, index) => {
+            companyList.slice(0, 5).map((item, index) => {
               return (
-                <li key={index} className="param-company__item"><input type='checkbox' />{item[0]}({item[1]})</li>
+                <li key={index} className="param-company__item">
+                  <input 
+                    type='checkbox' 
+                    onChange={(e) => checkClickHandler(e, item[0])}/>
+                    {item[0]}({item[1]})
+                </li>
               )
             })
           }
@@ -97,14 +167,24 @@ export function FilterByParam() {
       <div className="param__brand param-brand">
         <div className="param-brand__title">Бренд</div> 
         <div className="param-brand__search">
-          <Input text="Поиск..." icon={<Search/>} onChange={(e:React.ChangeEvent<HTMLInputElement>) => setInputBrand(e.target.value)}/>
+          <Input 
+            value={inputBrand}
+            text="Поиск..." 
+            icon={<Search/>} 
+            onChange={(e:React.ChangeEvent<HTMLInputElement>) => setInputBrand(e.target.value)}
+            onClick={() => searchClickHandler()}/>
         </div>
         {visibleBrands? (
           <ul className="param-brand__list">
           {
-            countedBrands.map((item, index) => {
+            brandList.map((item, index) => {
               return (
-                <li key={index} className="param-company__item"><input type='checkbox'/>{item[0]} ({item[1]})</li>
+                <li key={index} className="param-company__item">
+                  <input 
+                    type='checkbox' 
+                    onChange={(e) => checkClickHandler(e, item[0])}/>
+                    {item[0]} ({item[1]})
+                </li>
               )
             })
           }
@@ -113,9 +193,14 @@ export function FilterByParam() {
         ):(
           <ul className="param-brand__list">
           {
-            countedBrands.slice(0,5).map((item, index) => {
+            brandList.slice(0,5).map((item, index) => {
               return (
-                <li key={index} className="param-company__item"><input type='checkbox' />{item[0]} ({item[1]})</li>
+                <li key={index} className="param-company__item">
+                  <input 
+                    type='checkbox' 
+                    onChange={(e) => checkClickHandler(e, item[0])}/>
+                    {item[0]} ({item[1]})
+                  </li>
               )
             })
           }
@@ -125,7 +210,7 @@ export function FilterByParam() {
       </div>
       <div className="param__actions-btn">
         <Button text={'Показать'} onClick={() => clickFilterHandle()}/>
-        <button className="param__reset-btn"><Delete/></button>
+        <button className="param__reset-btn" onClick={() => resetClickHandler()}><Delete/></button>
       </div>
       <div className="param__filter-cat">
         {

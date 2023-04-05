@@ -1,0 +1,18 @@
+.cart {
+    &__title {
+        @include font(4rem, 4.8rem, 500);
+    }
+    &__empty, &__order_sucsess {
+        @include font(4rem, 4.8rem, 500);
+        color: $main-text;
+        margin: 2rem 0;
+    }
+    &__bottom {
+        @include flex(space-between, center);
+        margin-bottom: 2rem;
+    }
+    &__total-price {
+        @include font(3rem, 3.9rem, 700);
+        text-align: center;
+    }
+}

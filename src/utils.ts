@@ -63,4 +63,26 @@ const countParams = (produts: TProduct[], param:string) => {
     return Object.entries(obj);
 }
 
-export {getSortedProduct, getFilteredProduct, getFilteredProdByPrice, getProductsPerPage, countParams}
+const getCheckedProducts = (products:TProduct[], checkedParams:['']) => {
+    if(checkedParams.length<2) return products;
+    let arr=[];
+    for (let i=0; i<products.length; i++) {
+        let isRepeat = true;
+        for(let j=0; j<checkedParams.length;j++) {
+            if(products[i].manufacture.toLowerCase() === checkedParams[j].toLowerCase() || products[i].brand_name.toLowerCase() === checkedParams[j].toLowerCase()) {
+                isRepeat = !isRepeat;
+                if(!isRepeat) arr.push(products[i]);
+            }
+        }
+    }
+    return arr;
+}
+
+const getSearchedProducts = (products:TProduct[], param:string) => {
+    if(!param) return products;
+    return products.filter(item => {
+        return item.manufacture.toLowerCase().includes(param.toLowerCase()) || item.brand_name.toLowerCase().includes(param.toLowerCase());
+    });
+}
+
+export {getSortedProduct, getFilteredProduct, getFilteredProdByPrice, getProductsPerPage, countParams, getCheckedProducts, getSearchedProducts}

@@ -1,12 +1,13 @@
 .form {
     padding: 2rem 0;
-    max-height: 100vh;
+    height: auto;
     border: 1px solid #EDEDED;
     border-radius: 2rem;
-    @include flex(space-around, start, column);
+    @include flex(space-around, center, column);
     gap: 2rem;
     label {
-        @include flex(space-between, start, column);
+        @include flex(space-between, start, row);
+        width: 40%;
         input::-webkit-outer-spin-button,
         input::-webkit-inner-spin-button {
             -webkit-appearance: none;

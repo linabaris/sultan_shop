@@ -61,11 +61,12 @@ const cartSlice = createSlice({
                 }
                 return obj.price + sum;
             },0)
-        }
+        },
+        resetCart: () => initialState,
     }
 
 })
 
-export const { addGood, removeGood, reduceGoods } = cartSlice.actions;
+export const { addGood, removeGood, reduceGoods, resetCart } = cartSlice.actions;
 
 export default cartSlice.reducer;

@@ -1,9 +1,13 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Map, Mail, Logo, Tile, Download, Cart } from '../assets/svg';
 import { useSelector } from 'react-redux';
 import Button from './Button';
 
 function Header() {
+  const navigate = useNavigate();
+  const backClickHandle = () => {
+    navigate('/');
+  }
 
   const { totalCount } = useSelector((state:any) => state.cart); 
   return (
@@ -36,7 +40,7 @@ function Header() {
             <div className="header__logo">
               <Logo/>
             </div>
-            <Button text={'Каталог'} icon={<Tile/>}/>
+            <Button text={'Каталог'} icon={<Tile/>} onClick={backClickHandle}/>
             <div className="header__seacrh header-search">
               <input type="text" placeholder='Поиск...' className='header-search__form'/>
             </div>

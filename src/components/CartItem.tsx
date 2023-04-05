@@ -44,4 +44,4 @@ function CartItem({product}:TProductProps) {
   )
 }
 
-export default CartItem
+export default CartItem;
