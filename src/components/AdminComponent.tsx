@@ -8,7 +8,7 @@ function AdminComponent() {
     const [measure, setMeasure] = useState('');
 
     const lastId = useSelector((state:any) => state.products.lastIndex);
-    console.log(lastId);
+
     
     const dispatch = useDispatch();
     let localData:any = [];

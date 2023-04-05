@@ -6,7 +6,7 @@ import Button from './Button';
 function Header() {
   const navigate = useNavigate();
   const backClickHandle = () => {
-    navigate('/');
+    navigate('/sultan_shop');
   }
 
   const { totalCount } = useSelector((state:any) => state.cart); 
