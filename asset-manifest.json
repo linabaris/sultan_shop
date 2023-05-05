@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/sultan_shop/static/css/main.c388293d.css",
-    "main.js": "/sultan_shop/static/js/main.a637467c.js",
+    "main.css": "/sultan_shop/static/css/main.e3ff01c6.css",
+    "main.js": "/sultan_shop/static/js/main.ebde35f4.js",
     "static/media/logo-white.svg": "/sultan_shop/static/media/logo-white.1f8b4903661ccd3865c8345fc4411814.svg",
     "static/media/logo.svg": "/sultan_shop/static/media/logo.3a4005e8cf11f0e23f10659ac7709ee9.svg",
     "static/media/mastercard.svg": "/sultan_shop/static/media/mastercard.dece92920098a54a20eedea6c2c994a5.svg",
@@ -14,17 +14,21 @@
     "static/media/telegram.svg": "/sultan_shop/static/media/telegram.7681022777eee554b8f626a8d7a9b22f.svg",
     "static/media/box.svg": "/sultan_shop/static/media/box.77a856c67416883dd0cdf8209be56ed4.svg",
     "static/media/map.svg": "/sultan_shop/static/media/map.248bbe9a1b3bc378579114bbfafe6b50.svg",
+    "static/media/catalog-bl.svg": "/sultan_shop/static/media/catalog-bl.1928cbd9b07950bf3fa58978c02fd5d0.svg",
     "static/media/tile.svg": "/sultan_shop/static/media/tile.4756189f8fb2f4cdf0b38c581c7033d8.svg",
+    "static/media/search-bl.svg": "/sultan_shop/static/media/search-bl.2e7579ec4d7e4d74ea02293861076152.svg",
     "static/media/search.svg": "/sultan_shop/static/media/search.dc220b85ec983988f6f2629d99ba20b8.svg",
     "index.html": "/sultan_shop/index.html",
+    "static/media/burger.svg": "/sultan_shop/static/media/burger.abfea8252c976cf247af0ded9e0deb82.svg",
     "static/media/download.svg": "/sultan_shop/static/media/download.476856fdec10adf0adbb18ec14cf3121.svg",
     "static/media/prev-arrow.svg": "/sultan_shop/static/media/prev-arrow.8009929457bde0328f8f182170fd2c0f.svg",
     "static/media/next-arrow.svg": "/sultan_shop/static/media/next-arrow.93ba4abe5846a231d455ec0417dd0a4b.svg",
-    "main.c388293d.css.map": "/sultan_shop/static/css/main.c388293d.css.map",
-    "main.a637467c.js.map": "/sultan_shop/static/js/main.a637467c.js.map"
+    "static/media/arrow_white.svg": "/sultan_shop/static/media/arrow_white.35ab94e2f8817f324bd31c2293385fa8.svg",
+    "main.e3ff01c6.css.map": "/sultan_shop/static/css/main.e3ff01c6.css.map",
+    "main.ebde35f4.js.map": "/sultan_shop/static/js/main.ebde35f4.js.map"
   },
   "entrypoints": [
-    "static/css/main.c388293d.css",
-    "static/js/main.a637467c.js"
+    "static/css/main.e3ff01c6.css",
+    "static/js/main.ebde35f4.js"
   ]
 }
