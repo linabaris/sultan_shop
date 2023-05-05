@@ -1,9 +1,12 @@
 .list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
     gap: 3rem;
     &__wrapper {
         max-width: 1052px;
         margin: 0 auto;
+        @include media-mobile {
+            width: 100vw;
+        }
     }
 }

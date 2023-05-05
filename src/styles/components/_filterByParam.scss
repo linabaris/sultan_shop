@@ -1,7 +1,14 @@
 .param {
+    &__container {
+        display: flex;
+        flex-direction: column;
+    }
     @include flex(start, start, column);
     gap: 2rem;
     padding: 0 2rem;
+    @include media-mobile {
+        display: none;
+    }
     &__title {
         @include font(1.6rem, 2.4rem, 500);
     }
@@ -78,4 +85,19 @@
             margin-bottom: 1rem;
         }
     }
+    &-mobile {
+        &__showed-btn {
+            display: none;
+            @include media-mobile {
+                display: inline-block;
+            }
+        }
+    }
+    &__first-line {
+        display: flex;
+
+    }
+}
+.showed {
+    display: block;
 }

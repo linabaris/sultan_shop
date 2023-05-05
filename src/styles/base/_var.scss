@@ -6,6 +6,8 @@ $bg-form: #EDEDED;
 
 $wrapper-width:1370px;
 
+$mobile-width: 480px;
+
 @mixin font($size, $height, $wieght) {
     font-size: $size;
     line-height: $height;
@@ -17,4 +19,10 @@ $wrapper-width:1370px;
     flex-direction: $direction;
     justify-content: $justify;
     align-items: $align;
+}
+
+@mixin media-mobile {
+    @media (max-width: $mobile-width) {
+      @content;
+    }
 }

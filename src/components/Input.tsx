@@ -1,7 +1,15 @@
 import React from 'react';
 import { ReactNode } from 'react'; 
 
-function Input(props: {text:string, icon?:ReactNode, onChange?:React.ChangeEventHandler, onClick?:React.MouseEventHandler, value?:string}) {
+interface InputField {
+  text: string,
+  icon?: ReactNode,
+  onChange?: React.ChangeEventHandler, 
+  onClick?:React.MouseEventHandler, 
+  value?:string
+}
+
+function Input(props: InputField) {
   return (
       <div className="input">
         <input className='input__area' type="text" placeholder={props.text} onChange={props.onChange}/>

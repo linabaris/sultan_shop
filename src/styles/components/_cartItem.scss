@@ -1,6 +1,19 @@
 .cart {
     &-item {
+        margin: 2.5rem auto;
+        &__body {
+            max-width: 45%;
+            max-height: 25rem;
+            @include media-mobile {
+                max-width: 90%;
+            }
+        }
         @include flex(space-between, center);
+        @include media-mobile {
+            flex-direction: column;
+            height: fit-content;
+
+        }
         &__pic {
             max-width: 25rem;
             max-height: 25rem;
@@ -16,13 +29,30 @@
         }
         &__name {
             @include font(3rem, 3.6rem, 700);
+            @include media-mobile {
+                font-size: 2rem;
+            }
         }
         &__disc {
             @include font(1.2rem, 1.8rem, 300);
             color: $main-text;
         }
+        &__details {
+            @include flex(space-between, center);
+            align-items: center;
+            width: 33%;
+            height: 6rem;
+            @include media-mobile {
+                width: 100%;
+            }
+        } 
         &__total-price {
             @include font(3rem, 3.9rem, 700);
+            height: 100%;
+            display: flex;
+            align-items: center;
+            border-right: 1px dashed #3F4E65;
+            padding-right: 2rem;
         }
         &__delete-btn {
             background: #FFC85E;
@@ -37,7 +67,13 @@
 }
 .manage-btn {
     display: flex;
-    width: 20rem;
+    width: 40%;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    border-left: 1px dashed #3F4E65;
+    border-right: 1px dashed #3F4E65;
+    padding: 0 2rem;
     button {
         width: 34px;
         height: 23px;

@@ -26,6 +26,7 @@ export function FilterByParam() {
   //show or hide full lists of brand/manufacture(company)
   const [visibleManufact, setVisibleManufact] = useState(false);
   const [visibleBrands, setVisibleBrands ] = useState(false);
+  const [visibleParams, setVisibleParams] = useState(false);
 
   const dispatch = useDispatch();
   
@@ -81,6 +82,11 @@ export function FilterByParam() {
     dispatch(resetFilter());
 
   }
+
+  const setParamClass = () => {
+    if(visibleParams) return 'showed';
+    return 'unshowed';
+  }
   useEffect(() => {
     if(!inputCompany) {
       setCompanyList(countedManufact);
@@ -109,122 +115,129 @@ export function FilterByParam() {
 
 
   return (
-    <div className="param">
-      <div className="param__title">ПОДБОР ПО ПАРАМЕТРАМ</div>
-      <div className="param__price param-price">
-        <div className="param-price__title">Цена <span>₽</span></div>
-        <div className="param-price__range">
-          <input type="number" placeholder="0" value={inputMinVal} onChange={(e)=> setInputMinVal(e.target.value)}/>
-          -
-          <input type="number"  placeholder="10000" value={inputMaxVal} onChange={(e)=> setInputMaxVal(e.target.value)}/>
-        </div>
+    <div className="param__container">
+      <div className="param__first-line">
+        <div className="param__title">ПОДБОР ПО ПАРАМЕТРАМ</div>
+        <span className="param-mobile__showed-btn" onClick={() => setVisibleParams(prev => !prev)}>
+          {!visibleParams? '⮟' : '⮝'}
+        </span>
       </div>
-      <div className="param__company param-company">
-        <div className="param-company__title">Производитель</div>
-        <div className="param-company__search">
-          <Input 
-            value={inputCompany}
-            text="Поиск..." 
-            icon={<Search/>} 
-            onChange={(e:React.ChangeEvent<HTMLInputElement>) => setInputCompany(e.target.value)}
-            onClick={() => searchClickHandler()}/>
+      <div className={`param ${setParamClass()}`}>
+        <div className="param__price param-price">
+          <div className="param-price__title">Цена <span>₽</span></div>
+          <div className="param-price__range">
+            <input type="number" placeholder="0" value={inputMinVal} onChange={(e)=> setInputMinVal(e.target.value)}/>
+            -
+            <input type="number"  placeholder="10000" value={inputMaxVal} onChange={(e)=> setInputMaxVal(e.target.value)}/>
+          </div>
         </div>
-        {visibleManufact? (
-          <ul className="param-company__list">
-          {
-            companyList.map((item, index) => {
-              return (
-                <li key={index} className="param-company__item">
-                  <input 
-                  type='checkbox' 
-                  onChange={(e) => checkClickHandler(e,item[0])}/>
-                  {item[0]}({item[1]})
-                </li>
-              )
-            })
-          }
-          <div className="param-company__show-btn" onClick={()=> setVisibleManufact(prev=>!prev)}>Скрыть ⮝</div>
-        </ul>
-        
-        ) : (
-          <ul className="param-company__list">
-          {
-            companyList.slice(0, 5).map((item, index) => {
-              return (
-                <li key={index} className="param-company__item">
-                  <input 
+        <div className="param__company param-company">
+          <div className="param-company__title">Производитель</div>
+          <div className="param-company__search">
+            <Input 
+              value={inputCompany}
+              text="Поиск..." 
+              icon={<Search/>} 
+              onChange={(e:React.ChangeEvent<HTMLInputElement>) => setInputCompany(e.target.value)}
+              onClick={() => searchClickHandler()}/>
+          </div>
+          {visibleManufact? (
+            <ul className="param-company__list">
+            {
+              companyList.map((item, index) => {
+                return (
+                  <li key={index} className="param-company__item">
+                    <input 
                     type='checkbox' 
-                    onChange={(e) => checkClickHandler(e, item[0])}/>
+                    onChange={(e) => checkClickHandler(e,item[0])}/>
                     {item[0]}({item[1]})
-                </li>
-              )
-            })
-          }
-          <div className="param-company__show-btn" onClick={()=> setVisibleManufact(prev=>!prev)}>Показать всё ⮟</div>
-        </ul>
-        )}
-      </div>
-      <div className="param__brand param-brand">
-        <div className="param-brand__title">Бренд</div> 
-        <div className="param-brand__search">
-          <Input 
-            value={inputBrand}
-            text="Поиск..." 
-            icon={<Search/>} 
-            onChange={(e:React.ChangeEvent<HTMLInputElement>) => setInputBrand(e.target.value)}
-            onClick={() => searchClickHandler()}/>
-        </div>
-        {visibleBrands? (
-          <ul className="param-brand__list">
-          {
-            brandList.map((item, index) => {
-              return (
-                <li key={index} className="param-company__item">
-                  <input 
-                    type='checkbox' 
-                    onChange={(e) => checkClickHandler(e, item[0])}/>
-                    {item[0]} ({item[1]})
-                </li>
-              )
-            })
-          }
-          <div className="param-brand__show-btn" onClick={()=> setVisibleBrands(prev=>!prev)}>Скрыть ⮝</div>
-        </ul>
-        ):(
-          <ul className="param-brand__list">
-          {
-            brandList.slice(0,5).map((item, index) => {
-              return (
-                <li key={index} className="param-company__item">
-                  <input 
-                    type='checkbox' 
-                    onChange={(e) => checkClickHandler(e, item[0])}/>
-                    {item[0]} ({item[1]})
                   </li>
+                )
+              })
+            }
+            <div className="param-company__show-btn" onClick={()=> setVisibleManufact(prev=>!prev)}>Скрыть ⮝</div>
+          </ul>
+          
+          ) : (
+            <ul className="param-company__list">
+            {
+              companyList.slice(0, 5).map((item, index) => {
+                return (
+                  <li key={index} className="param-company__item">
+                    <input 
+                      type='checkbox' 
+                      onChange={(e) => checkClickHandler(e, item[0])}/>
+                      {item[0]}({item[1]})
+                  </li>
+                )
+              })
+            }
+            <div className="param-company__show-btn" onClick={()=> setVisibleManufact(prev=>!prev)}>Показать всё ⮟</div>
+          </ul>
+          )}
+        </div>
+        <div className="param__brand param-brand">
+          <div className="param-brand__title">Бренд</div> 
+          <div className="param-brand__search">
+            <Input 
+              value={inputBrand}
+              text="Поиск..." 
+              icon={<Search/>} 
+              onChange={(e:React.ChangeEvent<HTMLInputElement>) => setInputBrand(e.target.value)}
+              onClick={() => searchClickHandler()}/>
+          </div>
+          {visibleBrands? (
+            <ul className="param-brand__list">
+            {
+              brandList.map((item, index) => {
+                return (
+                  <li key={index} className="param-company__item">
+                    <input 
+                      type='checkbox' 
+                      onChange={(e) => checkClickHandler(e, item[0])}/>
+                      {item[0]} ({item[1]})
+                  </li>
+                )
+              })
+            }
+            <div className="param-brand__show-btn" onClick={()=> setVisibleBrands(prev=>!prev)}>Скрыть ⮝</div>
+          </ul>
+          ):(
+            <ul className="param-brand__list">
+            {
+              brandList.slice(0,5).map((item, index) => {
+                return (
+                  <li key={index} className="param-company__item">
+                    <input 
+                      type='checkbox' 
+                      onChange={(e) => checkClickHandler(e, item[0])}/>
+                      {item[0]} ({item[1]})
+                    </li>
+                )
+              })
+            }
+            <div className="param-brand__show-btn" onClick={()=> setVisibleBrands(prev=>!prev)}>Показать всё ⮟</div>
+          </ul>
+          )}
+        </div>
+        <div className="param__actions-btn">
+          <Button text={'Показать'} onClick={() => clickFilterHandle()}/>
+          <button className="param__reset-btn" onClick={() => resetClickHandler()}><Delete/></button>
+        </div>
+        <div className="param__filter-cat">
+          {
+            filterObj.map((item, index) => {
+              return (
+                <div 
+                  className="param__filter-tile" 
+                  key={index}
+                  onClick={()=>catFilterClickHandler(item.filterProp)}>
+                    {item.name}
+                </div>
               )
             })
           }
-          <div className="param-brand__show-btn" onClick={()=> setVisibleBrands(prev=>!prev)}>Показать всё ⮟</div>
-        </ul>
-        )}
-      </div>
-      <div className="param__actions-btn">
-        <Button text={'Показать'} onClick={() => clickFilterHandle()}/>
-        <button className="param__reset-btn" onClick={() => resetClickHandler()}><Delete/></button>
-      </div>
-      <div className="param__filter-cat">
-        {
-          filterObj.map((item, index) => {
-            return (
-              <div 
-                className="param__filter-tile" 
-                key={index}
-                onClick={()=>catFilterClickHandler(item.filterProp)}>
-                  {item.name}
-              </div>
-            )
-          })
-        }
+        </div>
       </div>
     </div>
   )

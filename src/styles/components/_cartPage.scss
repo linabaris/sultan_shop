@@ -1,6 +1,7 @@
 .cart {
     &__title {
         @include font(4rem, 4.8rem, 500);
+        margin: 2rem auto;
     }
     &__empty, &__order_sucsess {
         @include font(4rem, 4.8rem, 500);
@@ -9,7 +10,7 @@
     }
     &__bottom {
         @include flex(space-between, center);
-        margin-bottom: 2rem;
+        margin: 2rem auto;
     }
     &__total-price {
         @include font(3rem, 3.9rem, 700);

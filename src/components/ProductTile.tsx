@@ -5,6 +5,7 @@ import { CartWhite } from 'assets/svg';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addGood } from 'redux/slices/cartSlice';
+import { cutPtoductName } from 'utils';
 
 
 export default function Product({product}:TProductProps) {
@@ -22,6 +23,8 @@ export default function Product({product}:TProductProps) {
      dispatch(addGood(item));
   }
 
+
+
   return (
     <div className="product">
       <div className="product__container">
@@ -31,7 +34,7 @@ export default function Product({product}:TProductProps) {
         </div>
         <div className="product__info">
           <Link to={`/card/${product.code}`}>
-            <div className="product__name">{product.name}</div>
+            <div className="product__name">{cutPtoductName(product.name)}</div>
           </Link>
           <ul className="product__prop">
             <li className='product__prop_li'>Производитель: <span>{product.country}</span></li>

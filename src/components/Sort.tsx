@@ -1,3 +1,5 @@
+import { HiSortAscending, HiSortDescending } from 'react-icons/hi';
+
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setSortParam, setAscSort } from '../redux/slices/sortSlice';
@@ -44,13 +46,19 @@ function Sort() {
   return (
     <div className="sort">
         <span>Сортировать по: </span>
-        <span className={`sort__param ${setClassName(sortParam.name)}`} onClick={()=> setVisible(prev => !prev)}>{sortParam.name}</span>
+        <span className={`sort__param ${setClassName(sortParam.name)}`} onClick={()=> setVisible(prev => !prev)}>
+            {sortParam.name} 
+            {isAsc? <HiSortAscending style={{color:'black'}}/> : <HiSortDescending style={{color:'black'}}/>}
+        </span>
         {isVisible && (
             <ul className="sort__list">
                 {
                     sortParams.map((param, index) => {
                         return (
-                            <li className="sort__item" key={index} onClick={() => handlerClick(param.name)}>{param.name}</li>
+                            <li className="sort__item" key={index} onClick={() => handlerClick(param.name)}>
+                                {param.name}
+                                {isAsc? <HiSortDescending/> : <HiSortAscending/>}
+                            </li>
                         )
                     })
                 }

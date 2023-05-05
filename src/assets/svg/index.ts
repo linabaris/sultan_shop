@@ -15,7 +15,10 @@ import { ReactComponent as Delete } from './delete.svg';
 import { ReactComponent as ArrowNext } from './next-arrow.svg';
 import { ReactComponent as ArrowPrev } from './prev-arrow.svg';
 import { ReactComponent as Search } from './search.svg';
-
+import { ReactComponent as ArrowWhite } from './arrow_white.svg';
+import { ReactComponent as Burger } from './burger.svg';
+import { ReactComponent as SearchBl } from './search-bl.svg';
+import { ReactComponent as TileBl } from './catalog-bl.svg';
 
 export {Box, 
     Map, 
@@ -33,5 +36,9 @@ export {Box,
     Delete, 
     ArrowNext, 
     ArrowPrev, 
-    Search
+    Search,
+    ArrowWhite,
+    Burger,
+    SearchBl,
+    TileBl
 };

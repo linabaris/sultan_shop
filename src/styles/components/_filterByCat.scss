@@ -1,6 +1,6 @@
 .filter-line {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    
+    @include flex(space-between, center, row);
+    @include media-mobile {
+        display: none;
+    }
 }

@@ -85,4 +85,16 @@ const getSearchedProducts = (products:TProduct[], param:string) => {
     });
 }
 
-export {getSortedProduct, getFilteredProduct, getFilteredProdByPrice, getProductsPerPage, countParams, getCheckedProducts, getSearchedProducts}
+const cutPtoductName = (str:string) => {
+    let sliced = str.slice(0,75);
+    return sliced.length<str.length? sliced+='...' : str;
+}
+
+export {getSortedProduct, 
+    getFilteredProduct, 
+    getFilteredProdByPrice, 
+    getProductsPerPage, 
+    countParams, 
+    getCheckedProducts, 
+    getSearchedProducts,
+    cutPtoductName}

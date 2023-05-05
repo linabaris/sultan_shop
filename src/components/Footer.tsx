@@ -1,5 +1,5 @@
 import React from 'react';
-import { Download, LogoWhite, Mastercard, Telegram, Visa, WhatsApp } from 'assets/svg'
+import { Download, LogoWhite, Mastercard, Telegram, Visa, WhatsApp, ArrowWhite } from 'assets/svg'
 import Input from './Input';
 import Button from './Button';
 
@@ -17,7 +17,7 @@ function Footer() {
             </div>
             <div className="footer-about__subscription">
               <span>Подпишись на скидки и акции</span>
-              <Input text={'Введите ваш E-mail'}/>
+              <Input text={'Введите ваш E-mail'} icon={<ArrowWhite/>}/>
             </div>
           </div>
           <ul className="footer__menu footer-menu">

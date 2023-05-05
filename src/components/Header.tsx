@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { Map, Mail, Logo, Tile, Download, Cart } from '../assets/svg';
+import { Map, Mail, Logo, Tile, Download, Cart, Burger, TileBl, SearchBl } from '../assets/svg';
 import { useSelector } from 'react-redux';
 import Button from './Button';
 
@@ -9,7 +9,7 @@ function Header() {
     navigate('/sultan_shop');
   }
 
-  const { totalCount } = useSelector((state:any) => state.cart); 
+  const { totalCount, totalPrice } = useSelector((state:any) => state.cart); 
   return (
     <header className='header'>
       <div className="header__info wrapper">
@@ -62,6 +62,7 @@ function Header() {
                   <span>{totalCount}</span>
                 </div>
               </Link>
+              {totalPrice}
             </div>
             <div className="header__admin-act">
               <Link to={`/admin/`}>
@@ -71,6 +72,34 @@ function Header() {
           </div>
         </div>
       </nav>
+      <div className="header-mobile" >
+        <div className="header-mobile__lineUp">
+          <div className="header-mobile__burger">
+            <button className='header-mobile__burger-btn'>
+              <Burger/>
+            </button>
+          </div>
+          <Logo className='header-mobile__logo'/>
+          <div className="header-mobile__cart">
+            <Link to={'/cart'}>
+              <Cart/>
+              <div className="header__cart-count">
+                <span>{totalCount}</span>
+              </div>
+            </Link>
+          </div>
+        </div>
+        <div className="header-mobile__lineDown">
+          <div className="header-mobile__catalog" onClick={backClickHandle}>
+            <span>Каталог</span>
+            <TileBl/>
+          </div>
+          <div className="header-mobile__search">
+            <span>Поиск</span>
+            <SearchBl/>
+          </div>
+        </div>
+      </div>
     </header>
   )
 }

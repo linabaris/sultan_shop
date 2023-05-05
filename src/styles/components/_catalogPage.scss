@@ -2,13 +2,22 @@
     &__title {
         @include font(4rem, 4.8rem, 500);
         color: #111;
+        @include media-mobile {
+            font-size: 2.5rem;
+        }
     }
     &__up-line {
         display: flex;
         justify-content: space-between;
         padding-top: 2rem;
+        @include media-mobile {
+            flex-direction: column;
+        }
     }
     &__main {
         display: flex;
+        @include media-mobile {
+            flex-direction: column;
+        }
     }
 }

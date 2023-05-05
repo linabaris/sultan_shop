@@ -1,12 +1,24 @@
 import { Box } from 'assets/svg';
 import Button from './Button';
 import { TProductProps } from 'types';
-import { addGood } from 'redux/slices/cartSlice';
 import { useDispatch } from 'react-redux';
+import { addGood, removeGood, reduceGoods } from "redux/slices/cartSlice";
 
 
 function Card({product} : TProductProps) {
     const dispatch = useDispatch();
+
+    const decClickHandler = () => {
+        if(product.count === 1) {
+            dispatch(removeGood(product.id))
+        } else {
+            dispatch(reduceGoods(product));
+        }
+        
+    }
+    const incClickHandler = () => {
+        dispatch(addGood(product));
+    }
 
     const clickAddHandler = () => {
         const item = {
@@ -35,9 +47,14 @@ function Card({product} : TProductProps) {
                     <span><Box/></span>
                     {product.size} {product.measure}
                     </div>
-                    <div className="card__price">{product.price} Р</div>
                 </div>
                 <div className="card__actions">
+                    <div className="card__price">{product.price} Р</div>
+                    <div className="card__manage-btn manage-btn">
+                        <button className="manage-btn__dec" onClick={() => decClickHandler()}>-</button>
+                        <span>{product.count?product.count:1}</span>
+                        <button className="manage-btn__inc" onClick={() => incClickHandler()}>+</button>
+                    </div>
                     <Button text={'В корзину'} onClick={() => clickAddHandler( )}/>
                 </div>
             </div>
@@ -60,8 +77,8 @@ function Card({product} : TProductProps) {
                     <div className="card-charact__title">Характеристики</div>
                     <ul className='card-charact__list'>
                         <li className='card-charact__item'>Назначение: <span>{product.category}</span></li>
-                        <li className='card-charact__item'>Тип: <span>BioMio</span></li>
-                        <li className='card-charact__item'>Производитель: <span>{product.country}</span></li>
+                        <li className='card-charact__item'>Производитель: <span>{product.manufacture}</span></li>
+                        <li className='card-charact__item'>Страна бренда: <span>{product.country}</span></li>
                         <li className='card-charact__item'>Бренд: <span>{product.brand_name}</span></li>
                         <li className='card-charact__item'>Вес: <span>{product.size}{product.measure}</span></li>
                     </ul>
